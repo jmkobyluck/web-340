@@ -17,6 +17,18 @@ console.log(header.display('Johnny', 'Kobyluck', 'Exercise 1.3'));
 // line break
 console.log("");
 
+/*
+Expected output:
+
+Johhny Kobyluck
+Exercise 1.3
+Date: (current date)
+
+https:
+www.exercise1point3.com
+name=kobyluck
+*/
+
 // start program
 
 // declaring url variable
