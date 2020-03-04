@@ -2,5 +2,7 @@
   "name": "hello-world",
   "author": "Professor Krasso",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
