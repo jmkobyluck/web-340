@@ -32,7 +32,7 @@ var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// using logger
+// using morgan logger
 app.use(logger('dev'));
 
 // function providing product id
