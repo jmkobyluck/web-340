@@ -1,0 +1,13 @@
+{
+ "firstName": "Johnny",
+ "lastName": "Koblyuck",
+ "email": "jkobyluck@my365.bellevue.edu",
+ "address": "12345 Street Ln",
+ "city": "Orrville",
+ "state": "Ohio",
+ "zip": "44667",
+ "private": true,
+ "dependencies": {
+  "express": "^4.16.3"
+ }
+}
