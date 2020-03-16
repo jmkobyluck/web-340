@@ -8,16 +8,6 @@
 ;===========================================
 */
 
-// Require statement that imports my header file
-const header = require('../..kobyluck-header');
-
-// Calling the console log function to display my header
-console.log(header.display('Johnny', 'Kobyluck', 'Exercise 4.2'));
-
-// Line break
-console.log(" ")
-
-
 // start program
 
 // require statements
