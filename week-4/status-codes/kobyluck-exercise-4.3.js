@@ -1,10 +1,10 @@
 /*
 ;============================================
-; Title: Exercise 4.2
+; Title: Exercise 4.3
 ; Author: Professor Krasso
 ; Date: 15 March 2020
 ; Modified By: Jonathan Kobyluck
-; Description: JSON APIs
+; Description: HTTP Status Codes
 ;===========================================
 */
 
@@ -12,7 +12,7 @@
 const header = require('../..kobyluck-header');
 
 // Calling the console log function to display my header
-console.log(header.display('Johnny', 'Kobyluck', 'Exercise 4.2'));
+console.log(header.display('Johnny', 'Kobyluck', 'Exercise 4.3'));
 
 // Line break
 console.log(" ")
