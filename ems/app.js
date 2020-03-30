@@ -9,10 +9,11 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(logger("short"));
+app.use(express.static(__dirname+'/public'));
 
 app.get("/", function(req, res) {
   res.render("index", {
-    title: "Home Page"
+    title: "Employee Management System"
   });
 });
 

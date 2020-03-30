@@ -1,0 +1,82 @@
+body {
+  background: #f1f1f1;
+}
+
+.emp-list  {
+  background: #C7E5FF;
+  height: 80%;
+  overflow: auto;
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  scroll-behavior: smooth;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 40px;
+  position: relative;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  margin: 22px 0px;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;;
+}
+
+::-webkit-scrollbar-track-piece {
+  margin: 22px 0px;
+}
+
+.emp-inst {
+  border-radius: 20px;
+}
+
+.emp-details {
+  background: #C7E5FF;
+  height: 72%;
+  border-radius: 0 0 0 40px;
+  -webkit-column-count: 2;
+  margin-left: 5%;
+}
+
+.emp-details h1 {
+  padding-left: 5%;
+}
+
+.emp-details li {
+  display: block;
+}
+
+.emp-detail-nav {
+  background: #C7E5FF;
+  height: 72%;
+  border-radius: 0 0 40px 0;
+}
+
+.emp-detail-nav ul {
+  margin-top: 10  px;
+  list-style: none;
+}
+
+.emp-detail-nav li {
+  padding: 10px;
+}
+
+.emp-title {
+  margin: 0 11.5% 0 38.5%;
+  border-radius: 40px 40px 0 0;
+  background: #222222;
+  color: 9F9B9A;
+}
