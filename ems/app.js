@@ -1,10 +1,10 @@
 /*
 ============================================
-; Title: Exercise 8.2
+; Title: Exercise 8.3
 ; Author: Professor Krasso
 ; Date: 9 April 2020
 ; Modified By: Jonathan Kobyluck
-; Description: Cross-Site Scripting
+; Description: Cross-Site Request Forgery
 ;===========================================
 */
 
@@ -13,16 +13,21 @@ var http = require("http");
 var path = require("path");
 var mongoose = require("mongoose");
 var helmet = require("helmet");
+var cookieParser = require("cookie-parser");
+var bodyParser = require("body-parser");
+var csrf = require("csurf");
 
 var logger = require("morgan");
 
 var Employee = require("./models/employee");
 
+var csrfProtection = csrf({ cookie: true });
+
 var mongoDB = "<mLab connection string>";
 
-mongoose.connect(mongoDB, {
-  useMongoClient: true,
-});
+// mongoose.connect(mongoDB, {
+//   useMongoClient: true,
+// });
 
 mongoose.Promise = global.Promise;
 
@@ -39,6 +44,19 @@ var app = express();
 app.use(logger("short"));
 app.use(express.static(__dirname + "/public"));
 app.use(helmet.xssFilter());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(cookieParser());
+app.use(csrfProtection);
+app.use(function (req, res, next) {
+  var token = req.csrfToken();
+  res.cookie("XSRF-TOKEN", token);
+  res.locals.csrfToken = token;
+  next();
+});
+
 
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -52,6 +70,11 @@ app.get("/", function (req, res) {
   res.render("index", {
     title: "Employee Management System",
   });
+});
+
+app.post("/process", function (req, res) {
+  console.log(req.body.txtName);
+  res.redirect("/");
 });
 
 // create server
