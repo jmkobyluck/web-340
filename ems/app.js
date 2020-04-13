@@ -1,10 +1,10 @@
 /*
 ============================================
-; Title: Exercise 8.3
+; Title: Exercise 8.4
 ; Author: Professor Krasso
-; Date: 9 April 2020
+; Date: 12 April 2020
 ; Modified By: Jonathan Kobyluck
-; Description: Cross-Site Request Forgery
+; Description: MongoDB Integration
 ;===========================================
 */
 
@@ -23,11 +23,9 @@ var Employee = require("./models/employee");
 
 var csrfProtection = csrf({ cookie: true });
 
-var mongoDB = "<mLab connection string>";
+var mongoDB = "mongodb+srv://jmkobyluck:JmK.484645@buwebdev-cluster-1-duvph.mongodb.net/ems?retryWrites=true&w=majority";
 
-// mongoose.connect(mongoDB, {
-//   useMongoClient: true,
-// });
+mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 mongoose.Promise = global.Promise;
 
@@ -40,6 +38,7 @@ db.once("open", function () {
 
 // application
 var app = express();
+app.set("view engine", "ejs");
 
 app.use(logger("short"));
 app.use(express.static(__dirname + "/public"));
@@ -58,13 +57,9 @@ app.use(function (req, res, next) {
 });
 
 
-app.set("views", path.resolve(__dirname, "views"));
-app.set("view engine", "ejs");
 
-// model
-var employee = new Employee({
-  name: "Tony Stark",
-});
+app.set("views", path.resolve(__dirname, "views"));
+
 
 app.get("/", function (req, res) {
   res.render("index", {
@@ -72,9 +67,49 @@ app.get("/", function (req, res) {
   });
 });
 
+app.get("/new", function (req, res) {
+  res.render("new", {
+    title: "Add New Employee",
+  });
+});
+
+app.get("/list", function (req, res) {
+  Employee.find({}, function (error, employees) {
+    if (error) {
+      console.log(error);
+      throw error;
+    }
+
+    res.render("list", {
+      title: "Employee List",
+      employees: employees
+    });
+  });
+});
+
 app.post("/process", function (req, res) {
-  console.log(req.body.txtName);
-  res.redirect("/");
+  if (!req.body.firstName || !req.body.lastName) {
+    res.status(400).send("Entries must have a full name");
+    return;
+  }
+
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
+
+  var emp = new Employee({
+    firstName: firstName,
+    lastName: lastName
+  });
+
+  emp.save(function (error) {
+    if (error) {
+      console.log(error);
+      throw error;
+    } else {
+      console.log(firstName + " " + lastName + " saved successfully!");
+      res.redirect("/list");
+    }
+  });
 });
 
 // create server
