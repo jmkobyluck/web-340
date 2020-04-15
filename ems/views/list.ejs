@@ -1,10 +1,10 @@
 <!-- /*
 ============================================
-; Title: Exercise 8.4
+; Title: Exercise 9.2
 ; Author: Professor Krasso
-; Date: 12 April 2020
+; Date: 15 April 2020
 ; Modified By: Jonathan Kobyluck
-; Description: MongoDB Integration
+; Description: Finalize MongoDB Integrations
 ;===========================================
 */ -->
 
@@ -26,6 +26,7 @@
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Functions</th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,7 @@
         <tr>
           <td><%= employees.firstName %></td>
           <td><%= employees.lastName %></td>
+          <td><a href="/view/<%= employees.firstName %>">VIEW</a></td>
         </tr>
       </tbody>
       <% }) %>
