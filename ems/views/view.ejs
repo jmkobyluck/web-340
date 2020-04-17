@@ -18,14 +18,53 @@
   <h2>Employee Record</h2>
   <br>
   <div>
-    <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" class="form-control" id="firstName" readonly value="<%= employee[0].firstName %>"
-        name="firstName">
+    <div class="form-group row">
+      <ul class="col-sm-5">
+        <li>
+          <label for="firstName">First Name:</label>
+          <input type="text" class="form-control" id="firstName" readonly value="<%= employee[0].firstName %>"
+            name="firstName">
+        </li>
+        <li>
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" class="form-control" id="phoneNumber" readonly value="<%= employee[0].phoneNumber %>"
+            name="phoneNumber">
+        </li>
+        <li>
+          <label for="empId">Employee ID:</label>
+          <input type="text" class="form-control" id="empId" readonly value="<%= employee[0].empId %>" name="empId">
+        </li>
+        <li>
+          <label for="hireDate">Hire Date:</label>
+          <input type="text" class="form-control" id="hireDate" readonly value="<%= employee[0].hireDate %>"
+            name="hireDate">
+        </li>
+      </ul>
+      <ul class="col-sm-5">
+        <li>
+          <label for="lastName">Last Name:</label>
+          <input type="text" class="form-control" id="lastName" readonly value="<%= employee[0].lastName %>"
+            name="lastName">
+        </li>
+        <li>
+          <label for="dateOfBirth">Date of Birth:</label>
+          <input type="text" class="form-control" id="dateOfBirth" readonly value="<%= employee[0].dateOfBirth %>"
+            name="dateOfBirth">
+        </li>
+        <li>
+          <label for="email">Email:</label>
+          <input type="text" class="form-control" id="email" readonly value="<%= employee[0].email %>" name="email">
+        </li>
+        <li>
+          <label for="position">Position:</label>
+          <input type="text" class="form-control" id="position" readonly value="<%= employee[0].position %>"
+            name="position">
+        </li>
+      </ul>
     </div>
   </div>
   <br><br>
-  <a href="/">&larr; OK</a>
+  <a href="/list">&larr; OK</a>
 </div>
 
 <%- include ("footer") %>

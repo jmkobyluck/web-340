@@ -1,12 +1,41 @@
+html {
+  height: 100%;
+}
+
 body {
   background: #f1f1f1;
+  height: 100%;
+}
+
+footer {
+  margin: 0;
+}
+
+.container {
+  height: calc(98vh - 70px);
+}
+
+.navbar {
+  margin: 0;
 }
 
 .emp-list  {
   background: #C7E5FF;
   height: 80%;
   overflow: auto;
-  border-radius: 40px;
+  border-radius: 20px;
+  max-width: 720px;
+  margin: auto;
+}
+
+.emp-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list-title {
+  max-width: 720px;
+margin: 15px auto;
 }
 
 .emps {
@@ -50,7 +79,29 @@ body {
 }
 
 .emp-inst {
-  border-radius: 20px;
+  border-radius: 10px;
+  margin: 10 auto;
+  text-align: center;
+  font-size: 2em;
+  padding: 0;
+}
+
+.emp-inst a {
+  background-color: #ffffff;
+  color: #707070;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: auto;
+  border-radius: 10px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.emp-inst a:hover, .emp-inst a:active {
+  background-color: #E5E5E5;
 }
 
 .emp-details {
@@ -89,4 +140,23 @@ body {
   border-radius: 40px 40px 0 0;
   background: #222222;
   color: 9F9B9A;
+}
+
+.list-container {
+  height: calc(96.5vh - 70px);
+  margin: 0;
+}
+
+.new-list {
+  list-style: none;
+}
+
+.form-group {
+  max-width: 500px;
+  margin: auto;
+}
+
+.row {
+  margin-left: 15px;
+  margin-right: 15px;
 }

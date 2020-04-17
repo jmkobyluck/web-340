@@ -3,121 +3,19 @@
 <%- include("header") %>
 <%- include("navbar") %>
 
-<br><br>
-<!DOCTYPE html>
-<html>
-<%- include("header") %>
-<%- include("navbar") %>
 
-<div class="container-fluid text-center">
-  <% if (employees.length > 0) { %>
-  <div class="row content">
-
-
-    <!-- Blank Space -->
-    <div class="col-sm-1"></div>
-
-
-    <!-- Employee List -->
-    <div class="col-sm-3 sidenav well-lg emp-list">
-      <% employees.forEach(function(employees) { %>
-      <div class="well emp-inst">
-        <ul class="emps">
-          <li class="btn ">
-            <a href="#" id="emp-name"><%= employees.firstName %>
-              <%= employees.lastName %></a href="#">
-          </li>
-        </ul>
-      </div>
-      <% }) %>
-      <% } else { %>
-      No Entries! <a href="/new">Add One!</a>
-      <% } %>
+<section>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to Johnny's Home Improvement</h1>
+    </div>
+    <br><br>
+    <div>
+      <p>To start managing your employees, just go <a href="/list">HERE</a></p>
     </div>
 
-
-    <!-- Blank Space -->
-    <div class="col-sm-2"></div>
-
-
-    <!-- Selected Employee Details -->
-    <div class="row">
-      <h1 class="text-left well emp-title">Employee</h1>
-      <div class="col-sm-6 text-left well emp-details" id="emp-details">
-        <div class="col-sm">
-          <% employees.forEach(function(employees) { %>
-          <ul class="details">
-            <li>
-              <h4><%= employees.firstName %></h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Phone Number</h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Employee I.D.</h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Hire Date</h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Time Type</h4>
-              <span></span>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm">
-          <ul class="details">
-            <li>
-              <h4><%= employees.lastName %></h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Date of Birth</h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Email</h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Position/Title</h4>
-              <span></span>
-            </li>
-            <li>
-              <h4>Time in Position</h4>
-              <span></span>
-            </li>
-          </ul>
-          <% }) %>
-        </div>
-
-        <!-- Actionable links -->
-        <!-- <div class="col-sm emp-detail-nav well text-left">
-            <ul>
-              <li><a href="#">Edit Info</a></li>
-              <li><a href="#">Transfer</a></li>
-              <li><a href="#">Leave of Absence</a></li>
-              <li><a href="#">Terminate</a></li> -->
-        </ul>
-      </div>
-    </div>
   </div>
-
-
-  <!-- Blank Space -->
-  <div class="col-md-1"></div>
-</div>
-</div>
-
-<%- include ("footer") %>
-<%- include ("scripts") %>
-
-</html>
-
+</section>
 
 <%- include ("footer") %>
 <%- include ("scripts") %>

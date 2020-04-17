@@ -13,35 +13,68 @@
 <%- include("header") %>
 <%- include("navbar") %>
 
-<br><br>
-
 <div role="main" class="container">
   <br /><br />
 
 
   <form method="post" action="/process">
-    <div class="form-group">
-      <label for="txtName">First Name:</label>
-      <input type="text" class="form-control" id="firstName" name="firstName" />
-    </div>
+    <ul class="new-list">
+      <li class="form-group">
+        <label for="txtName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" />
+      </li>
 
-    <div class="form-group">
-      <label for="txtName">Last Name:</label>
-      <input type="text" class="form-control" id="lastName" name="lastName" />
-    </div>
+      <li class="form-group">
+        <label for="txtName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" />
+      </li>
 
-    <div class="form-group">
-      <!-- CSRF token -->
-      <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
+      <li class="form-group">
+        <label for="txtName">Phone Number:</label>
+        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" />
+      </li>
 
-      <button type="submit" class="btn btn-primary float-right">
-        Submit
-      </button>
-    </div>
+      <li class="form-group">
+        <label for="txtName">Date of Birth:</label>
+        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" />
+      </li>
+
+      <li class="form-group">
+        <label for="txtName">Employee ID:</label>
+        <input type="number" class="form-control" id="empId" name="empId" />
+      </li>
+
+      <li class="form-group">
+        <label for="txtName">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" />
+      </li>
+
+      <li class="form-group">
+        <label for="txtName">Position:</label>
+        <input type="text" class="form-control" id="position" name="position" />
+      </li>
+
+      <li class="form-group">
+        <label for="txtName">Hire Date:</label>
+        <input type="date" class="form-control" id="hireDate" name="hireDate" />
+      </li>
+
+      <li>
+        <div class="form-group">
+          <!-- CSRF token -->
+          <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
+
+          <button type="submit" class="btn btn-primary float-right">
+            Submit
+          </button>
+        </div>
+      </li>
+    </ul>
   </form>
 </div>
 
 <%- include ("footer") %>
+
 <%- include ("scripts") %>
 
 </html>

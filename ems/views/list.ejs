@@ -13,37 +13,35 @@
 <%- include("header") %>
 <%- include("navbar") %>
 
-<div class="container">
-  <% if (employees.length > 0) { %>
-  <div class="row">
-    <h2>Employee Listing</h2>
-  </div>
+<body>
+  <div class="list-container">
+    <div class="row">
+      <div class="container no-entries">
+        <% if (employees.length > 0) { %>
+        <div>
+          <h2 class="list-title">Employees</h2>
+        </div>
 
-  <div class="row">
-    <a href="/new">Add New</a>
-    <table class="table table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Functions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% employees.forEach(function(employees) { %>
-        <tr>
-          <td><%= employees.firstName %></td>
-          <td><%= employees.lastName %></td>
-          <td><a href="/view/<%= employees.firstName %>">VIEW</a></td>
-        </tr>
-      </tbody>
-      <% }) %>
-    </table>
-    <% } else { %>
-    No Entries! <a href="/new">Add One!</a>
-    <% } %>
+        <div class="sidnav well-lg emp-list">
+          <a href="/new">Add New</a>
+          <ul><% employees.forEach(function(employees) { %>
+            <li class="well emp-inst"><a href="/view/<%= employees.firstName %>"><%= employees.firstName %>
+                <%= employees.lastName %></a></li>
+            <% }) %>
+          </ul>
+
+          <% } else { %>
+          No Entries! <a href="/new" style="font-size: x-large;">Add One!</a>
+          <% } %>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
+</body>
+
+
+
 
 <%- include ("footer") %>
 <%- include ("scripts") %>
