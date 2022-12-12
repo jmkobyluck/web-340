@@ -8,6 +8,6 @@
  "zip": "44667",
  "private": true,
  "dependencies": {
-  "express": "^4.16.3"
+  "express": "^4.17.3"
  }
 }
